@@ -82,7 +82,7 @@ Since chDB cannot pushdown arbitrary queries, we use connectorx to fetch data in
   * Download: `git clone git@github.com:wangxiaoying/chdb.git && cd chdb && git checkout v1.3.0_cx`
   * Build wheel for chDB: `make wheel` (need llvm, some reference can be found [here](https://github.com/wangxiaoying/chdb/blob/19bf2f5084b3a754d81c4da49e760762f9d2c4b4/.github/workflows/build_wheels.yml#L116) and [here](https://clickhouse.com/docs/en/development/developer-instruction#cloning-a-repository-to-your-development-machine))
      * The wheel file can be found under `./dist/`
-  * Add `chdb = {path = "${YOUR_PATH}/chdb/dist/chdb-1.3.0-cp311-cp311-linux_x86_64.whl"}` to `pyproject.toml` and install the local version by `poetry lock && poetry install`.
+* Add `chdb = {path = "${YOUR_PATH}/chdb/dist/chdb-1.3.0-cp311-cp311-linux_x86_64.whl"}` to `pyproject.toml` and install the local version by `poetry lock && poetry install`.
 
 #### Trino
 * Go to trino path: `cd benchmark/trino`
