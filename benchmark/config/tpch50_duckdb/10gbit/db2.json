@@ -1,0 +1,20 @@
+{
+    "type": "POSTGRES",
+    "driver": "org.postgresql.Driver",
+    "url": "jdbc:postgresql://{DB_IP}:{DB_PORT}/tpch50",
+    "username": "postgres",
+    "password": "postgres",
+    "costParams": {
+        "join": 2.0,
+        "agg": 2.0,
+        "sort": 2.0,
+        "trans": 1.0
+    },
+    "cardEstType": "postgres",
+    "partitionType": "postgres",
+    "partition": {
+        "max_parallelism": 8
+    },
+    "dialect": "postgres",
+    "disableOps": []
+}
