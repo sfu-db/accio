@@ -10,9 +10,9 @@ python = "^3.11"
 py4j = "^0.10.9.7"
 contexttimer = "^0.3.3"
 
-duckdb = { path = "../postgresscanner/duckdb/tools/pythonpkg", develop = true }
-chdb = {path = "../chdb/dist/chdb-1.3.0-cp311-cp311-linux_x86_64.whl"}
-polars = {path = "../polars/target/wheels/polars-1.3.0-cp38-abi3-manylinux_2_35_x86_64.whl"}
+# duckdb = { path = "../postgresscanner/duckdb/tools/pythonpkg", develop = true }
+# chdb = {path = "../chdb/dist/chdb-1.3.0-cp311-cp311-linux_x86_64.whl"}
+# polars = {path = "../polars/target/wheels/polars-1.3.0-cp38-abi3-manylinux_2_35_x86_64.whl"}
 trino = "^0.329.0"
 
 
