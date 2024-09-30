@@ -215,6 +215,8 @@ public class FedConvention extends Convention.Impl {
     public static FedConvention LOCAL_INSTANCE = null;
     // NOTE: only used for cardinality estimation on plans cannot handle by a specific estimator
     public static FedConvention GLOBAL_INSTANCE = new FedConvention("global", null, null, null, new BaseCardinalityEstimator(), null,false);;
+    public static FedConvention CE_INSTANCE = null;
+
 
     public boolean isLocal;
     public DataSource dataSource;

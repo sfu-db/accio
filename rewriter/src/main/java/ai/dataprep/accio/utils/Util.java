@@ -59,7 +59,7 @@ public class Util {
             vertex.fieldDomain = rowCountCache.get(bitSet).fieldDomain;
         } else {
             // try to get the row count from remote directly (e.g., through `EXPLAIN`)
-            Double rowCount = convention.cardinalityEstimator.getRowCountDirectly(convention, vertex.rel);
+            Double rowCount = FedConvention.CE_INSTANCE.cardinalityEstimator.getRowCountDirectly(FedConvention.CE_INSTANCE, vertex.rel);
 
             if (rowCount == null) {
                 // guess row count using heuristics (field domain size are already updated within the procedure)

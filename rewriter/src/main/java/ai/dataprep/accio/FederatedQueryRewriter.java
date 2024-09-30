@@ -128,6 +128,8 @@ public class FederatedQueryRewriter {
         }
         registerLocalDataSource(rootSchema, configPath);
 
+        FedConvention.CE_INSTANCE = FedConvention.createConventionFromConfig("ce", configPath);
+
         return rootSchema;
     }
 

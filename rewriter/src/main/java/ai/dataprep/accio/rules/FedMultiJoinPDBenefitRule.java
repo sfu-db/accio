@@ -181,14 +181,14 @@ public class FedMultiJoinPDBenefitRule extends RelRule<FedMultiJoinPDBenefitRule
             // collect domain size of join keys
             double[] fieldDomains = new double[multiJoin.getNumFieldsInJoinFactor(i)];
             Arrays.fill(fieldDomains, -1);
-            for (int key: joinKeys) {
-                if (key >= multiJoin.getJoinStart(i) && (
-                        i == multiJoin.getNumJoinFactors()-1
-                                || key < multiJoin.getJoinStart(i+1))) {
-                    int fId = key - multiJoin.getJoinStart(i);
-                    fieldDomains[fId] = convention.cardinalityEstimator.getDomainSizeDirectly(convention, rel, rel.getRowType().getFieldNames().get(fId));
-                }
-            }
+//            for (int key: joinKeys) {
+//                if (key >= multiJoin.getJoinStart(i) && (
+//                        i == multiJoin.getNumJoinFactors()-1
+//                                || key < multiJoin.getJoinStart(i+1))) {
+//                    int fId = key - multiJoin.getJoinStart(i);
+//                    fieldDomains[fId] = convention.cardinalityEstimator.getDomainSizeDirectly(convention, rel, rel.getRowType().getFieldNames().get(fId));
+//                }
+//            }
 
             PVertex vertex = new PVertex(convention, convention, rel, bitSet, ImmutableBitSet.of(), unusedFilters, factorOffsets, multiJoin.getNumFieldsInJoinFactor(i), fieldDomains);
             Util.fillInRowCount(vertex, rowCountCache, bitSet, vertex.convention);

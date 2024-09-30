@@ -19,10 +19,11 @@ public class FedRelMdRowCount implements MetadataHandler<BuiltInMetadata.RowCoun
                     new FedRelMdRowCount(), BuiltInMetadata.RowCount.Handler.class);
 
     public static FedConvention getBestConvention(RelNode rel) {
-        SingleSourcePushdownChecker pushdownChecker = new SingleSourcePushdownChecker(true);
-        pushdownChecker.go(rel);
-        // if not a query on a single source or cannot do estimation by the source, use global convention
-        return pushdownChecker.convention.orElse(FedConvention.GLOBAL_INSTANCE);
+        return FedConvention.CE_INSTANCE;
+//        SingleSourcePushdownChecker pushdownChecker = new SingleSourcePushdownChecker(true);
+//        pushdownChecker.go(rel);
+//        // if not a query on a single source or cannot do estimation by the source, use global convention
+//        return pushdownChecker.convention.orElse(FedConvention.GLOBAL_INSTANCE);
     }
 
     public static @Nullable Double redirectToLogicalRel(RelNode rel, RelMetadataQuery mq) {

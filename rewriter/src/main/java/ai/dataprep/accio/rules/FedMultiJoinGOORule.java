@@ -158,14 +158,14 @@ public class FedMultiJoinGOORule extends RelRule<FedMultiJoinGOORule.Config> imp
             // collect domain size of join keys
             double[] fieldDomains = new double[multiJoin.getNumFieldsInJoinFactor(i)];
             Arrays.fill(fieldDomains, -1);
-            for (int key: joinKeys) {
-                if (key >= multiJoin.getJoinStart(i) && (
-                        i == multiJoin.getNumJoinFactors()-1
-                                || key < multiJoin.getJoinStart(i+1))) {
-                    int fId = key - multiJoin.getJoinStart(i);
-                    fieldDomains[fId] = convention.cardinalityEstimator.getDomainSizeDirectly(convention, rel, rel.getRowType().getFieldNames().get(fId));
-                }
-            }
+//            for (int key: joinKeys) {
+//                if (key >= multiJoin.getJoinStart(i) && (
+//                        i == multiJoin.getNumJoinFactors()-1
+//                                || key < multiJoin.getJoinStart(i+1))) {
+//                    int fId = key - multiJoin.getJoinStart(i);
+//                    fieldDomains[fId] = convention.cardinalityEstimator.getDomainSizeDirectly(convention, rel, rel.getRowType().getFieldNames().get(fId));
+//                }
+//            }
 
             LVertex vertex = new LVertex(convention, rel, ImmutableBitSet.of(i), ImmutableBitSet.of(), unusedFilters, factorOffsets, multiJoin.getNumFieldsInJoinFactor(i), fieldDomains);
             Util.fillInRowCount(vertex, null, null, vertex.convention);
