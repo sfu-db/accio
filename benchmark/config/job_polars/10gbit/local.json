@@ -1,0 +1,5 @@
+{
+    "type": "MANUAL",
+    "dialect": "polars",
+    "schema": {}
+}
